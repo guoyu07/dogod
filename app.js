@@ -1,6 +1,6 @@
 var express = require('express')
     ,cons = require('consolidate')
-    ,model = require('./model');
+    ,controller = require('./controller');
 
 var app = express();
 
@@ -11,19 +11,19 @@ app.get('/',function(req,res){
 })
 
 app.get('/agg/*',function(req,res){
-    model.loadAgg(req,res)
+    controller.loadAgg(req,res)
 })
 
 app.get('/doc/*',function(req,res){
-    model.loadDoc(req,res)
+    controller.loadDoc(req,res)
 })
 
 app.post('/agg/update',function(req,res){
-    model.updateAgg(req,res);
+    controller.updateAgg(req,res);
 })
 
 app.post('/doc/update',function(req,res){
-    model.updateDoc(req,res);
+    controller.updateDoc(req,res);
 })
 
 app.listen(3000)

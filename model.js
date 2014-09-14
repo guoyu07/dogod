@@ -1,34 +1,18 @@
 var config = require('./config/config.json'),
     fs = require('fs');
 
-var dataPath = config.dataPath;
+var getAggByPath = function(aggPath){
+    var aggContent;
 
-var loadAgg = function(req,res) {
-    var aggName = req.path.slice(4).replace(/\//g,''),
-        aggPath = dataPath + aggName + '.json';
+    if(aggPath && fs.existsSync(aggPath)){
 
+        aggContent = require(aggPath);
 
+    }
 
-    res.render('index.html',{
-        title:'test',
-        agg:aggName
-    })
+    return aggContent;
 }
 
-var loadDoc = function(req,res){
-    console.log(req)
-}
-
-var updateAgg = function(req,res){
+var getDocByPath = function(){
 
 }
-
-var updateDoc = function(req,res){
-
-}
-
-
-exports.loadAgg = loadAgg;
-exports.loadDoc = loadDoc;
-exports.updateAgg = updateAgg;
-exports.updateDoc = updateDoc;
