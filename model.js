@@ -14,11 +14,13 @@ marked.setOptions({
 });
 
 var getAggByPath = function(aggPath){
-    var aggContent;
+    var aggFile,aggContent;
 
     if(aggPath && fs.existsSync(aggPath)){
 
-        aggContent = require(aggPath);
+        aggFile = fs.readFileSync(aggPath).toString();
+
+        aggContent = JSON.parse(aggFile);
 
     }
 
@@ -27,9 +29,9 @@ var getAggByPath = function(aggPath){
 
 var getDocByPath = function(docPath){
 
-    var docContent,docHTML;
+    var docContent,docHTML,fileNameREG = /(\.md)$/i;
 
-    if(docPath && fs.existsSync(docPath)){
+    if(docPath && fileNameREG.test(docPath) && fs.existsSync(docPath)){
 
         docContent = fs.readFileSync(docPath).toString();
 

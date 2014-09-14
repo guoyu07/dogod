@@ -18,11 +18,11 @@ app.get('/doc/*',function(req,res){
     controller.loadDoc(req,res)
 })
 
-app.post('/agg/update',function(req,res){
+app.post('/update/agg',function(req,res){
     controller.updateAgg(req,res);
 })
 
-app.post('/doc/update',function(req,res){
+app.post('/update/doc',function(req,res){
     controller.updateDoc(req,res);
 })
 
