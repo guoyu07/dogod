@@ -2,20 +2,19 @@ var config = require('./config/config.json'),
     model = require('./model'),
     fs = require('fs');
 
-var dataPath = config.dataPath;
-
 var loadAgg = function(req,res) {
     var aggName = req.path.slice(4).replace(/\//g,''),
-        aggPath = dataPath + aggName + '.json',
+        aggPath = config.agg_path + aggName + '.json',
         aggContent,
         docName = req.param('doc') || 'gettingstarted',
         docPath,
-        docContent;
+        docContent = {},
+        docTitle;
 
     aggContent = model.getAggByPath(aggPath);
 
     if(aggContent){
-        docPath = aggContent[docName];
+        docPath = config.doc_path + aggContent[docName];
         docContent = model.getDocByPath(docPath);
     }
 
@@ -30,7 +29,8 @@ var loadAgg = function(req,res) {
             title:docTitle,
             name:docName,
             path:docPath,
-            content:docContent
+            html:docContent.html,
+            content:docContent.content
         }
     })
 }

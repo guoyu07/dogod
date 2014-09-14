@@ -1,3 +1,4 @@
 {
-    "dataPath" : "./data"
+    "agg_path" : "./data/agg/",
+    "doc_path" : "./data/doc/"
 }
