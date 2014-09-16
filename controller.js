@@ -2,10 +2,9 @@ var config = require('./config/config.json'),
     model = require('./model'),
     fs = require('fs');
 
-var allAggs = model.getAggs();
-
 var loadAgg = function(req,res) {
-    var globalPath = req.path.slice(5).split('/'),
+    var allAggs = model.getAggs(),
+        globalPath = req.path.slice(5).split('/'),
         aggName = globalPath[0],
         aggPath = config.agg_path + aggName + '.json',
         aggContent,
@@ -45,7 +44,8 @@ var loadAgg = function(req,res) {
 }
 
 var loadDoc = function(req,res){
-    var docPath = config.doc_path + req.path.slice(4),
+    var allAggs = model.getAggs(),
+        docPath = config.doc_path + req.path.slice(4),
         docContent;
 
     docContent = model.getDocByPath(docPath);
