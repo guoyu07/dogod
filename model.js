@@ -13,6 +13,19 @@ marked.setOptions({
     smartypants: false
 });
 
+var getAggs = function(){
+    var aggPath = config.agg_path,
+        aggFileList = fs.readdirSync(aggPath),
+        aggFileListResult = [];
+    for(var i = 0 ;i<aggFileList.length;i++){
+        if(/(\.json)$/i.test(aggFileList[i])){
+            aggFileListResult.push(aggFileList[i])
+        }
+    }
+
+    return aggFileListResult
+}
+
 var getAggByPath = function(aggPath){
     var aggFile,aggContent;
 
@@ -46,5 +59,6 @@ var getDocByPath = function(docPath){
 
 }
 
+exports.getAggs = getAggs;
 exports.getAggByPath = getAggByPath;
 exports.getDocByPath = getDocByPath;

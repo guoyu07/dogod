@@ -26,4 +26,14 @@ app.post('/update/doc',function(req,res){
     controller.updateDoc(req,res);
 })
 
-app.listen(3000)
+try{
+
+  app.listen(3000)
+
+  console.log('server started!')
+
+}catch(e){
+
+  console.log(e)
+
+}
