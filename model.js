@@ -19,7 +19,7 @@ var getAggs = function(){
         aggFileListResult = [];
     for(var i = 0 ;i<aggFileList.length;i++){
         if(/(\.json)$/i.test(aggFileList[i])){
-            aggFileListResult.push('/agg/'+aggFileList[i].replace(/(\.json)$/i,''))
+            aggFileListResult.push(aggFileList[i].replace(/(\.json)$/i,''))
         }
     }
 

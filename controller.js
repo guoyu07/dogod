@@ -66,7 +66,8 @@ var loadDoc = function(req,res){
 }
 
 var updateAgg = function(req,res){
-
+    console.log(11111)
+    console.log(req.param('test'))
 }
 
 var updateDoc = function(req,res){
