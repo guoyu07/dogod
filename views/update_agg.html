@@ -1,0 +1,33 @@
+{% extends './common/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+  {% parent %}
+   <link rel="stylesheet" type="text/css" href="/css/agg_update.css" />
+{% endblock %}
+
+{% block content %}
+  {% parent %}
+<div class="content">
+<div class="content-wrapper">
+	<h2 class="content-title"><i class="fa fa-edit"></i>{{ title }} - {% if type=="edit" %}<a href="/agg/{{ aggName }}">{{ aggName }}</a>{% else %}{{ aggName }}{% endif %}</h2>
+	<div class="content-edit">
+		<form class="content-edit-form" method="post" action="" id="editForm">
+			<input class="form-input-submit edit-submit" id="editSubmit" type="submit" value="提交">
+			<textarea class="form-textarea" name="aggContent" id="aggContent">{{ aggContent }}</textarea>
+		</form>
+	</div>
+</div>
+</div>
+{% endblock %}
+
+{% block foot %}
+	<script>
+		var CONSTANT = CONSTANT || {};
+		CONSTANT.name = '{{ aggName }}';
+		CONSTANT.defaultData = {{ aggContent|safe }};
+	</script>
+    <script src="/js/lib/jquery.jsonEdit.js"></script>
+    <script src="/js/agg_update.js"></script>
+{% endblock %}

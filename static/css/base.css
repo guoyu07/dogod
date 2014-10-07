@@ -1,0 +1,62 @@
+/* ========================= clearfix =============================== */
+.clearfix:before,
+.clearfix:after{
+	content: '.';
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	font-size: 0;
+	line-height: 0;
+	width: 0;
+	height: 0;
+}
+
+.clearfix:after{
+	clear: both;
+}
+
+/*
+	The following zoom:1 rule is specifically for IE6 + IE7.
+	Move to separate stylesheet if invalid CSS is a problem.
+*/
+
+.clearfix{
+	zoom: 1;
+}
+
+/* ========================== TOP ==================================== */
+.nav{
+	padding:0 20px;
+	background: #f7f7f7;
+	line-height: 60px;
+}
+.nav .nav-logo{
+	float:left;
+	font-size: 24px;
+	color:#0088ee;
+}
+.nav .nav-ul{
+	float:right;
+}
+.nav .nav-ul .nav-item{
+	float:left;
+	padding:18px 20px;
+}
+.nav .nav-ul .nav-item a{
+	color:#666666;
+	line-height: 24px;
+	font-size: 14px;
+	padding:5px 0px 3px;
+	border-bottom: 2px solid transparent;
+	transition:.3s;
+}
+.nav .nav-ul .nav-item a:hover{
+	line-height: 24px;
+	font-size: 14px;
+	border-bottom: 2px solid #0088ee;
+}
+.nav .nav-ul .active a{
+	color:#0088ee;
+}
+
+/* ======================== CONTENT WRAPPER ========================= */

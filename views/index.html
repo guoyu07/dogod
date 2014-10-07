@@ -1,12 +1,16 @@
-<!doctype>
-<html>
-<head>
-    <title><%=title%></title>
-</head>
-<body>
-testasdf<%=agg%>
-<% for(var i=0; i<agg.length; i++) {%>
-<li><%= agg[i] %></li>
-<% } %>
-</body>
-</html>
+{% extends './common/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+  {% parent %}
+{% endblock %}
+
+{% block content %}
+  {% parent %}
+<div class="content">
+{% for item agg %}
+<li>{{ item }}</li>
+{% endfor %}
+</div>
+{% endblock %}

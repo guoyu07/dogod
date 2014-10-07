@@ -1,8 +1,0 @@
-<nav class="nav">
-	<a href="/">LOGO</a>
-	<ul class="nav-ul">
-		<% for(var j=0; j<aggs.length; j++){%>
-		<li class="nav-item <%if(agg && agg.name == aggs[j]){%>active<%}%>"><a href="/agg/<%= aggs[j]%>"><%= aggs[j]%></a></li>
-		<%}%>
-	</ul>
-</nav>

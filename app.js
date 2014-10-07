@@ -4,7 +4,19 @@ var express = require('express')
 
 var app = express();
 
-app.engine('html', cons.ejs);
+app.use(express.static(__dirname + '/static',{
+  dotfiles: 'ignore',
+  etag: false,
+  extensions: ['htm', 'html','less'],
+  index: false,
+  maxAge: '1d',
+  redirect: false,
+  setHeaders: function (res, path) {
+    res.set('x-timestamp', Date.now())
+  }
+}))
+
+app.engine('html', cons.swig);
 
 app.get('/',function(req,res){
 	res.send('test');
@@ -14,15 +26,19 @@ app.get('/agg/*',function(req,res){
     controller.loadAgg(req,res)
 })
 
+app.post('/agg/edit',function(req,res){
+    controller.editAgg(req,res)
+})
+
 app.get('/doc/*',function(req,res){
     controller.loadDoc(req,res)
 })
 
-app.post('/update/agg',function(req,res){
+app.get('/update/agg',function(req,res){
     controller.updateAgg(req,res);
 })
 
-app.post('/update/doc',function(req,res){
+app.get('/update/doc',function(req,res){
     controller.updateDoc(req,res);
 })
 

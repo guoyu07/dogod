@@ -1,0 +1,27 @@
+<!doctype>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    {% block head %}
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/font-awesome/css/font-awesome.min.css" />
+    {% endblock %}
+</head>
+<body>
+{% block content %}
+<nav class="nav clearfix">
+	<a class="nav-logo" href="/">DoGod</a>
+	<ul class="nav-ul clearfix">
+		{% for item in aggs %}
+		<li class="nav-item {% if agg && agg.name == item %}active {% endif %}"><a href="/agg/{{ item }}">{{ item }}</a></li>
+		{% endfor %}
+	</ul>
+</nav>
+{% endblock %}
+
+{% block foot %}
+{% endblock %}
+</body>
+</html>

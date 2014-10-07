@@ -1,38 +1,41 @@
 {
-    "title":"test",
+    "title":"test1111111",
+    "name":"test",
+    "img":"",
+    "isNav":true,
     "time":"190000000",
     "list":[{
     			"title":"gettingstarted",
     			"doclist":[{
     					"title"		:	"what is dogod",
-    					"docpath"	:	"intro.md"
+    					"doc"	:	"/agg/test/intro.md"
     				},{
     					"title"		:	"how to install",
-    					"docPath"	:	"install.md"
+    					"doc"	:	"/agg/test/install.md"
     				},{
     					"title"		:	"changelog",
-    					"docPath"	:	"changelog.md"
+    					"doc"	:	"/agg/test/changelog.md"
     				}]
     		},{
     			"title":"configuration",
     			"doclist":[{
     					"title"		:	"config path",
-    					"docpath"	:	"configuration.md#path"
+    					"doc"	:	"/agg/test/configuration.md#path"
     				},{
     					"title"		:	"config agg",
-    					"docpath"	:	"configuration.md#agg"
+    					"doc"	:	"/agg/test/configuration.md#agg"
     				},{
     					"title"		:	"config document",
-    					"docPath"	:	"configuration.md#doc"
+    					"doc"	:	"/agg/test/configuration.md#doc"
     				}]
     		},{
     			"title":"create a pate",
     			"doclist":[{
     					"title"		:	"create agg",
-    					"docpath"	:	"configuration.md#path"
+    					"doc"	:	"/agg/test/configuration.md#path"
     				},{
     					"title"		:	"create doc",
-    					"docpath"	:	"configuration.md#agg"
+    					"doc"	:	"/agg/test/configuration.md#agg"
     				}]
     		}]
 }

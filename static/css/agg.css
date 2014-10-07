@@ -1,0 +1,62 @@
+.content{
+
+}
+.content .content-wrapper{
+	padding:0 20px;
+}
+.content .content-title{
+	line-height: 80px;
+	font-size: 24px;
+	color: #666666;
+}
+.content .content-title a{
+	color: #999999;
+	padding-right: 10px;
+	transition:.3s;
+}
+.content .content-title a:hover{
+	color: #0088ee;
+}
+.content .content-doc-nav{
+	width: 18%;
+	float:left;
+	overflow: hidden;
+	border-radius: 5px;
+	background: #f7f7f7;
+}
+.content .content-doc-nav-wrapper{
+	padding:20px;
+	padding-right: 0px;
+}
+.content .content-doc-nav .doc-nav-list{
+	margin-bottom: 20px;
+}
+.content .content-doc-nav .doc-nav-list .doc-nav-title{
+	font-weight: bold;
+	line-height: 30px;
+	color: #666666;
+}
+.content .content-doc-nav .doc-nav-list .doc-nav-item a{
+	display: block;
+	line-height: 24px;
+	color: #999999;
+	border-right:2px solid transparent;
+	padding-right: 20px;
+	transition:.3s;
+}
+.content .content-doc-nav .doc-nav-list .doc-nav-item a:hover{
+	color: #0088ee;
+}
+.content .content-doc-nav .doc-nav-list .active a{
+	color: #0088ee;
+	border-right:2px solid #0088ee;
+}
+
+
+.content .content-doc-detail{
+	width: 82%;
+	float:left;
+}
+.content .content-doc-detail-wrapper{
+	padding:20px;
+}
