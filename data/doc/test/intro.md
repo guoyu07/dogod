@@ -1,3 +1,10 @@
+/*
+ Title: a
+ Hidden: true
+ Date: 2014-07-21 21:19:52
+ Tags: Example
+ Category: Example
+*/
 # marked
 
 > A full-featured markdown parser and compiler, written in JavaScript. Built

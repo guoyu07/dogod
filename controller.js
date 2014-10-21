@@ -111,8 +111,24 @@ var updateDoc = function(req,res){
 }
 
 var editAgg = function(req,res){
-    res.write('{"code":0}');
-    res.end();
+    var aggList = req.body.list;
+    try{
+        aggList = JSON.parse(aggList);
+    }catch(err){
+        console.log(err)
+    };
+
+    model.updateAggByName({
+        type:req.body.type,
+        title:req.body.title,
+        name:req.body.name,
+        img:req.body.img,
+        isNav:req.body.isNav,
+        list:aggList
+    },function(result){
+        res.write(JSON.stringify(result));
+        res.end();
+    })
 }
 
 

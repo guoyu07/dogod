@@ -18,6 +18,7 @@
 	color: #0088ee;
 }
 .content .content-doc-nav{
+	min-height: 500px;
 	width: 18%;
 	float:left;
 	overflow: hidden;
@@ -55,8 +56,13 @@
 
 .content .content-doc-detail{
 	width: 82%;
-	float:left;
+	float:right;
 }
 .content .content-doc-detail-wrapper{
 	padding:20px;
+}
+.content .content-doc-detail-edit{
+	position: fixed;
+	bottom:0px;
+	right:0px;
 }

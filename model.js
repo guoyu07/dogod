@@ -8,7 +8,7 @@ marked.setOptions({
     tables: true,
     breaks: false,
     pedantic: false,
-    sanitize: true,
+    sanitize: false,
     smartLists: true,
     smartypants: false
 });
@@ -122,7 +122,48 @@ var getDocByPath = function(docPath){
 
 }
 
-var updateAggByPath = function(aggPath){
+var updateAggByName = function(content,callback){
+    var aggName = content.name,
+        aggPath = config.agg_path + aggName + '.json',
+        isAggExist = hasAgg(aggName);
+
+    if(!content || !content.name || !(content.list && content.list.length > 0) ){
+        callback({
+            errno:1,
+            errmsg:'数据格式不正确！'
+        })
+        return;
+    }
+    
+    if(content.type == 'new' && isAggExist){
+        callback({
+            errno:3,
+            errmsg:'文件已存在，无法新增！'
+        })
+        return;
+    }else if(content.type == 'edit' && !isAggExist){
+        callback({
+            errno:4,
+            errmsg:'文件已不存在，无法编辑！'
+        })
+        return;
+    }
+
+    fs.writeFile(aggPath,JSON.stringify(content,null,4),function(err){
+        if(err){
+            callback({
+                errno:2,
+                errmsg:'写入数据出错！'
+            });
+            return;
+        }
+
+        callback({
+            errno:0,
+            errmsg:''
+        })
+
+    })
 
 }
 
@@ -138,4 +179,4 @@ exports.hasDoc = hasDoc;
 exports.getAggByPath = getAggByPath;
 exports.getDocByPath = getDocByPath;
 exports.updateDocByPath = updateDocByPath;
-exports.updateAggByPath = updateAggByPath;
+exports.updateAggByName = updateAggByName;

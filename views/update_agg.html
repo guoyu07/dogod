@@ -26,7 +26,8 @@
 	<script>
 		var CONSTANT = CONSTANT || {};
 		CONSTANT.name = '{{ aggName }}';
-		CONSTANT.defaultData = {{ aggContent|safe }};
+		CONSTANT.type = '{{ type }}'
+		CONSTANT.defaultData = {{ aggContent|safe|default() }};
 	</script>
     <script src="/js/lib/jquery.jsonEdit.js"></script>
     <script src="/js/agg_update.js"></script>

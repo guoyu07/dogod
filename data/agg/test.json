@@ -1,41 +1,55 @@
 {
-    "title":"test1111111",
-    "name":"test",
-    "img":"",
-    "isNav":true,
-    "time":"190000000",
-    "list":[{
-    			"title":"gettingstarted",
-    			"doclist":[{
-    					"title"		:	"what is dogod",
-    					"doc"	:	"/agg/test/intro.md"
-    				},{
-    					"title"		:	"how to install",
-    					"doc"	:	"/agg/test/install.md"
-    				},{
-    					"title"		:	"changelog",
-    					"doc"	:	"/agg/test/changelog.md"
-    				}]
-    		},{
-    			"title":"configuration",
-    			"doclist":[{
-    					"title"		:	"config path",
-    					"doc"	:	"/agg/test/configuration.md#path"
-    				},{
-    					"title"		:	"config agg",
-    					"doc"	:	"/agg/test/configuration.md#agg"
-    				},{
-    					"title"		:	"config document",
-    					"doc"	:	"/agg/test/configuration.md#doc"
-    				}]
-    		},{
-    			"title":"create a pate",
-    			"doclist":[{
-    					"title"		:	"create agg",
-    					"doc"	:	"/agg/test/configuration.md#path"
-    				},{
-    					"title"		:	"create doc",
-    					"doc"	:	"/agg/test/configuration.md#agg"
-    				}]
-    		}]
+    "title": "test1111111",
+    "name": "test",
+    "img": "",
+    "isNav": "true",
+    "list": [
+        {
+            "title": "gettingstarted",
+            "doclist": [
+                {
+                    "title": "what is dogod",
+                    "doc": "/agg/test/intro.md"
+                },
+                {
+                    "title": "how to install",
+                    "doc": "/agg/test/install.md"
+                },
+                {
+                    "title": "changelog",
+                    "doc": "/agg/test/changelog.md"
+                }
+            ]
+        },
+        {
+            "title": "configuration",
+            "doclist": [
+                {
+                    "title": "config path",
+                    "doc": "/agg/test/configuration.md#path"
+                },
+                {
+                    "title": "config agg",
+                    "doc": "/agg/test/configuration.md#agg"
+                },
+                {
+                    "title": "config document",
+                    "doc": "/agg/test/configuration.md#doc"
+                }
+            ]
+        },
+        {
+            "title": "create a pate",
+            "doclist": [
+                {
+                    "title": "create agg",
+                    "doc": "/agg/test/configuration.md#path"
+                },
+                {
+                    "title": "create doc",
+                    "doc": "/agg/test/configuration.md#agg"
+                }
+            ]
+        }
+    ]
 }

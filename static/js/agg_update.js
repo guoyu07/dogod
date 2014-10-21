@@ -95,20 +95,21 @@
 	        height:'auto'
             ,errorAlert:true
 	        ,buttonSelector:'#editSubmit'
-            ,onSubmit:function(data){
+            ,onSubmit:function(){
                 var thisValue = $('.jsonEdit').text().replace(/(\r|\n)/g,'');
 
                 thisValue  = JSON.parse(thisValue);
+                thisValue.type = CONSTANT.type || 'new';
 
                 validate(thisValue,{
                     success:function(thisVal){
                         thisValue.list = JSON.stringify(thisVal.list);
-
+                        $('#editForm').submit();
                         $.post('/agg/edit',thisValue,function(res){
-                            if(res.code == "0"){
-                                //window.location.href = '/agg/'+thisValue.name;
+                            if(res.errno == "0"){
+                                window.location.href = '/agg/'+thisValue.name;
                             }else{
-                                alert('res.msg')
+                                alert(res.errmsg)
                             }
                         },"JSON")
                     },

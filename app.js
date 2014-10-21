@@ -1,6 +1,7 @@
 var express = require('express')
     ,cons = require('consolidate')
-    ,controller = require('./controller');
+    ,controller = require('./controller')
+    ,bodyParser = require('body-parser');
 
 var app = express();
 
@@ -15,6 +16,8 @@ app.use(express.static(__dirname + '/static',{
     res.set('x-timestamp', Date.now())
   }
 }))
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use( bodyParser.urlencoded() ); // to support URL-encoded bodies
 
 app.engine('html', cons.swig);
 

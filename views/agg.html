@@ -14,8 +14,8 @@
 <div class="content-wrapper">
 	<h2 class="content-title"><a class="fa fa-folder-open" href="/update/agg?agg={{ agg.name }}" title="编辑聚合页"></a>{{ agg.content.title }} - {{ doc.name }}</h2>
 	<section class="content-doc clearfix">
-		<nav class="content-doc-nav">
-		<div class="content-doc-nav-wrapper">
+		<nav class="content-doc-nav" id="content_doc_nav">
+		<div class="content-doc-nav-wrapper" id="content_doc_nav_wrapper">
 			{% for item in agg.content.list %}
 			<dl class="doc-nav-list">
 				<dt class="doc-nav-title">{{ item.title }}</dt>
@@ -27,12 +27,23 @@
 		</div>
 		</nav>
 		<article class="content-doc-detail markdown-body">
-		<div class="content-doc-detail-wrapper">
-			<!-- <h3 class="content-doc-title"><a href="{{ doc.url }}">{{ doc.name }}</a></h3> -->
-			{{ doc.html|safe }}
-		</div>
+			<div class="content-doc-detail-wrapper">
+				<!-- <h3 class="content-doc-title"><a href="{{ doc.url }}">{{ doc.name }}</a></h3> -->
+				{{ doc.html|safe }}
+			</div>
+			<ul class="content-doc-detail-edit">
+				<li class="edit-item"><a href="/doc/{{ agg.name }}/{{ doc.name }}">编辑本文</a></li>
+				<li class="edit-item"><a >作者</a></li>
+				<li class="edit-item"><a >时间</a></li>
+				<li class="edit-item"><a >归类</a></li>
+			</ul>
 		</article>
 	</section>
 </div>
 </div>
+{% endblock %}
+
+{% block foot %}
+    <script src="/js/lib/jquery.scrollFloat.js"></script>
+    <script src="/js/agg.js"></script>
 {% endblock %}

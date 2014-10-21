@@ -1,0 +1,39 @@
+{
+    "type": "edit",
+    "title": "hello world!",
+    "name": "test7",
+    "img": "",
+    "isNav": "false",
+    "list": [
+        {
+            "title": "getting started",
+            "doclist": [
+                {
+                    "title": "what is toolkit",
+                    "doc": "/agg/test7/whatistoolkit.md"
+                },
+                {
+                    "title": "install",
+                    "doc": "/agg/test7/install.md"
+                }
+            ]
+        },
+        {
+            "title": "configuration",
+            "doclist": [
+                {
+                    "title": "test",
+                    "doc": "/agg/test7/test.md"
+                },
+                {
+                    "title": "what is toolkit",
+                    "doc": "/agg/test7/test2.md"
+                },
+                {
+                    "title": "what is toolkit",
+                    "doc": "/agg/test7/test2.md"
+                }
+            ]
+        }
+    ]
+}

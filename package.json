@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/xiongwilee/dogod",
   "dependencies": {
+    "body-parser": "^1.9.0",
     "swig": "^1.4.2"
   }
 }
