@@ -32,10 +32,10 @@
 				{{ doc.html|safe }}
 			</div>
 			<ul class="content-doc-detail-edit">
-				<li class="edit-item"><a href="/doc/{{ agg.name }}/{{ doc.name }}">编辑本文</a></li>
-				<li class="edit-item"><a >作者</a></li>
-				<li class="edit-item"><a >时间</a></li>
-				<li class="edit-item"><a >归类</a></li>
+				<li class="edit-list"><a class="edit-item" href="/update/doc/{{ agg.name }}/{{ doc.name }}"><i class="fa fa-pencil-square"></i>编辑文档</a></li>
+				<li class="edit-list"><span class="edit-item"><i class="fa fa-user"></i>作者:{{doc.attr.Author}}</span></li>
+				<li class="edit-list"><span class="edit-item"><i class="fa fa-clock-o"></i>时间:{{doc.attr.Date}}</span></li>
+				<li class="edit-list"><span class="edit-item"><i class="fa fa-tag"></i>归类:{{agg.name}}</span></li>
 			</ul>
 		</article>
 	</section>
@@ -44,6 +44,6 @@
 {% endblock %}
 
 {% block foot %}
-    <script src="/js/lib/jquery.scrollFloat.js"></script>
+    <script src="/bower_components/jquery.scrollFloat.js/jquery.scrollFloat.js"></script>
     <script src="/js/agg.js"></script>
 {% endblock %}

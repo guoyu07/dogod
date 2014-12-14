@@ -20,6 +20,8 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "jquery.scrollFloat.js": "https://github.com/xiongwilee/jquery.scrollFloat.js.git",
-    "jquery.jsonEdit": "https://github.com/xiongwilee/jquery.jsonEdit.git"
+    "jquery.jsonEdit": "https://github.com/xiongwilee/jquery.jsonEdit.git",
+    "font-awesome": "~4.2.0",
+    "marked": "~0.3.2"
   }
 }

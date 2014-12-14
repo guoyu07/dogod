@@ -13,6 +13,33 @@ marked.setOptions({
     smartypants: false
 });
 
+
+/*
+ test: test
+ test1: test1
+*/
+var getConWithAttr = function(content){
+    var contentArr = content.match(/^(\/\*[\s\S]+\*\/)([\s\S]+)/),
+        attrText ,curAttr ,attrArr = {} ,contentText = content;
+    if(contentArr && contentArr.length == 3){
+        contentText = contentArr[2];
+        attrText = contentArr[1].replace('/*','').replace('*/','');
+        attrText = attrText.split('\n');
+        if(attrText.length>0){
+            for(var i = 0 ;i < attrText.length;i++){
+                curAttr = attrText[i].replace(/\s/,'').split(': ');
+                if(curAttr[0] && curAttr[1]) attrArr[curAttr[0]] = curAttr[1];
+            }
+        }else{
+            attrText = {};
+        }
+    }
+    return {
+        attr : attrArr,
+        content : contentText
+    }
+}
+
 var getAggs = function(){
     var aggPath = config.agg_path,
         aggFileList = fs.readdirSync(aggPath),
@@ -105,20 +132,28 @@ var hasDoc = function(docPath){
 
 var getDocByPath = function(docPath){
 
-    var docContent,docHTML,fileNameREG = /(\.md)$/i;
+    var docContent,docHTML,fileNameREG = /(\.md)$/i , docConWithAttr = {};
 
     if(docPath && fileNameREG.test(docPath) && fs.existsSync(docPath)){
 
         docContent = fs.readFileSync(docPath).toString();
 
-        docHTML = marked(docContent);
+        docConWithAttr = getConWithAttr(docContent);
+
+        docHTML = marked(docConWithAttr.content);
 
     }
 
     return {
-        content:docContent,
-        html:docHTML
+        all     : docContent,
+        attr    : docConWithAttr.attr,
+        content : docConWithAttr.content,
+        html    : docHTML
     };
+
+}
+
+var updateDocByPath = function(docPath){
 
 }
 
@@ -164,10 +199,6 @@ var updateAggByName = function(content,callback){
         })
 
     })
-
-}
-
-var updateDocByPath = function(docPath){
 
 }
 

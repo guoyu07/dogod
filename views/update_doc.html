@@ -4,11 +4,17 @@
 
 {% block head %}
   {% parent %}
+   <link rel="stylesheet" type="text/css" href="/css/github-markdown.css" />
+   <link rel="stylesheet" type="text/css" href="/css/doc.css" />
 {% endblock %}
 
 {% block content %}
   {% parent %}
 <div class="content">
-	update doc
+	<article class="content-doc">
+		<textarea class="content-doc-wrapper">
+{{ doc.all|safe }}
+		</textarea>
+	</article>
 </div>
 {% endblock %}

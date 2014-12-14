@@ -4,12 +4,12 @@ var config = require('../config/config.json'),
 
 var loadAgg = function(req,res) {
     var allNavs = model.getNavs(),
-        globalPath = req.path.slice(5).split('/'),
-        aggName = globalPath[0],
+        globalPath = req.path.split('/'),
+        aggName = globalPath[2],
         aggPath = config.agg_path + aggName + '.json',
         aggContent,
         aggTitle,
-        docName = globalPath[1],
+        docName = globalPath[3],
         docPath,
         docContent = {},
         title = '查看聚合页:'+aggName;
@@ -45,14 +45,16 @@ var loadAgg = function(req,res) {
             url:'/doc/' + aggName + '/' + docName,
             path:docPath,
             html:docContent.html,
-            content:docContent.content
+            content:docContent.content,
+            attr:docContent.attr
         }
     })
 }
 
 var loadDoc = function(req,res){
     var allNavs = model.getNavs(),
-        docPath = config.doc_path + req.path.slice(4),
+        docParam = req.path.split('/'),
+        docPath = config.doc_path + '/' + docParam[2] + '/' + docParam[3],
         docContent;
 
     docContent = model.getDocByPath(docPath);
@@ -64,10 +66,11 @@ var loadDoc = function(req,res){
 
         },
         doc:{
-            name:req.param('docName'),
-            path:docPath,
-            html:docContent.html,
-            content:docContent.content
+            name : req.param('docName'),
+            path : docPath,
+            html : docContent.html,
+            content : docContent.content,
+            attr : docContent.attr
         }
     })
 }
@@ -102,11 +105,26 @@ var updateAgg = function(req,res){
 
 var updateDoc = function(req,res){
     var allNavs = model.getNavs(),
-        docPath = config.doc_path + req.path.slice(4),
+        docParam = req.path.split('/'),
+        docPath = config.doc_path + '/' + docParam[3] + '/' + docParam[4],
         docContent;
+
+    docContent = model.getDocByPath(docPath);
+
     res.render('update_doc.html',{
-        title:"编辑聚合页",
-        aggs:allNavs
+        title:"内容页",
+        aggs:allNavs,
+        agg:{
+
+        },
+        doc:{
+            name : req.param('docName'),
+            path : docPath,
+            html : docContent.html,
+            content : docContent.content,
+            all  : docContent.all,
+            attr : docContent.attr
+        }
     })
 }
 
@@ -131,9 +149,31 @@ var editAgg = function(req,res){
     })
 }
 
+var editDoc = function(req,res){
+    var aggList = req.body.list;
+    try{
+        aggList = JSON.parse(aggList);
+    }catch(err){
+        console.log(err)
+    };
+
+    model.updateDocByPath({
+        type:req.body.type,
+        title:req.body.title,
+        name:req.body.name,
+        img:req.body.img,
+        isNav:req.body.isNav,
+        list:aggList
+    },function(result){
+        res.write(JSON.stringify(result));
+        res.end();
+    })
+}
+
 
 exports.loadAgg = loadAgg;
 exports.loadDoc = loadDoc;
 exports.updateAgg = updateAgg;
 exports.updateDoc = updateDoc;
 exports.editAgg = editAgg;
+exports.editDoc = editDoc;

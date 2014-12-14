@@ -105,7 +105,7 @@
                     success:function(thisVal){
                         thisValue.list = JSON.stringify(thisVal.list);
                         $('#editForm').submit();
-                        $.post('/agg/edit',thisValue,function(res){
+                        $.post('/edit/agg',thisValue,function(res){
                             if(res.errno == "0"){
                                 window.location.href = '/agg/'+thisValue.name;
                             }else{

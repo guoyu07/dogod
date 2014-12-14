@@ -4,11 +4,18 @@
 
 {% block head %}
   {% parent %}
+   <link rel="stylesheet" type="text/css" href="/css/github-markdown.css" />
+   <link rel="stylesheet" type="text/css" href="/css/doc.css" />
 {% endblock %}
 
 {% block content %}
   {% parent %}
 <div class="content">
-	{{ doc.html|safe }}
+	<article class="content-doc markdown-body">
+		<div class="content-doc-wrapper">
+			<!-- <h3 class="content-doc-title"><a href="{{ doc.url }}">{{ doc.name }}</a></h3> -->
+			{{ doc.html|safe }}
+		</div>
+	</article>
 </div>
 {% endblock %}

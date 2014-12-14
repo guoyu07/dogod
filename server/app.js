@@ -32,7 +32,7 @@ app.get('/agg/*',function(req,res){
     controller.loadAgg(req,res)
 })
 
-app.post('/agg/edit',function(req,res){
+app.post('/edit/agg',function(req,res){
     controller.editAgg(req,res)
 })
 
@@ -40,11 +40,15 @@ app.get('/doc/*',function(req,res){
     controller.loadDoc(req,res)
 })
 
+app.post('/edit/doc',function(req,res){
+    controller.editDoc(req,res)
+})
+
 app.get('/update/agg',function(req,res){
     controller.updateAgg(req,res);
 })
 
-app.get('/update/doc',function(req,res){
+app.get('/update/doc/*',function(req,res){
     controller.updateDoc(req,res);
 })
 

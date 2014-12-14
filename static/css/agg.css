@@ -64,5 +64,26 @@
 .content .content-doc-detail-edit{
 	position: fixed;
 	bottom:0px;
-	right:0px;
+	right:20px;
+}
+.content .content-doc-detail-edit .edit-list{
+	float:left;
+}
+.content .content-doc-detail-edit .edit-list .edit-item{
+	display: inline-block;
+	width:24px;
+	height: 24px;
+	overflow: hidden;
+	font-size: 14px;
+	color: #999999;
+	transition:.3s;
+}
+.content .content-doc-detail-edit .edit-list .edit-item .fa{
+	width: 24px;
+	line-height: 24px;
+	text-align: center;
+}
+.content .content-doc-detail-edit .edit-list .edit-item:hover{
+	width: 150px;
+	color: #0088ee;
 }
