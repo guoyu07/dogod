@@ -1,0 +1,25 @@
+{
+  "name": "dogod",
+  "version": "0.0.0",
+  "homepage": "https://github.com/xiongwilee/dogod",
+  "authors": [
+    "wilee <wilee@outlook.com>"
+  ],
+  "keywords": [
+    "dogod"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "static/"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "jquery.scrollFloat.js": "https://github.com/xiongwilee/jquery.scrollFloat.js.git",
+    "jquery.jsonEdit": "https://github.com/xiongwilee/jquery.jsonEdit.git"
+  }
+}

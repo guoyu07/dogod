@@ -1,0 +1,13 @@
+{
+  "name": "jquery.jsonEdit",
+  "homepage": "https://github.com/xiongwilee/jquery.jsonEdit",
+  "_release": "8d57745f0a",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "8d57745f0a848a756f33cff1ed1b18e5a6d638ae"
+  },
+  "_source": "https://github.com/xiongwilee/jquery.jsonEdit.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/xiongwilee/jquery.jsonEdit.git"
+}

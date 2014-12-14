@@ -1,4 +1,4 @@
 {
-    "agg_path" : "./data/agg/",
-    "doc_path" : "./data/doc/"
+    "agg_path" : "../data/agg/",
+    "doc_path" : "../data/doc/"
 }

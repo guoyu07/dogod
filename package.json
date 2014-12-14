@@ -2,10 +2,7 @@
   "name": "dogod",
   "description": "Embedded JavaScript templates",
   "version": "1.0.0",
-  "author": {
-    "name": "wilee",
-    "email": "wilee@outlook.com"
-  },
+  "author": "wilee <wilee@outlook.com>",
   "keywords": [
     "doc",
     "markdown",
@@ -26,8 +23,6 @@
   "scripts": {
     "test": "mocha --require should --reporter spec"
   },
-  "readme": "",
-  "readmeFilename": "Readme.md",
   "bugs": {
     "url": "https://github.com/xiongwilee/dogod/issues"
   },
@@ -35,5 +30,6 @@
   "dependencies": {
     "body-parser": "^1.9.0",
     "swig": "^1.4.2"
-  }
+  },
+  "license": "ISC"
 }

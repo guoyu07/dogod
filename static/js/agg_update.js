@@ -1,5 +1,5 @@
-(function(W,$){
-	CONSTANT = CONSTANT || {};
+(function(W, $){
+	var CONSTANT = CONSTANT || {};
 
 	var editor;
 
@@ -126,4 +126,4 @@
 	}
 
 	init();
-})(window,jQuery)
+})(window, jQuery)

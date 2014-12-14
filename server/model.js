@@ -1,4 +1,4 @@
-var config = require('./config/config.json'),
+var config = require('../config/config.json'),
     fs = require('fs'),
     marked = require('marked');
 

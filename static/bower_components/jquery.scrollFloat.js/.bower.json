@@ -1,0 +1,13 @@
+{
+  "name": "jquery.scrollFloat.js",
+  "homepage": "https://github.com/xiongwilee/jquery.scrollFloat.js",
+  "_release": "fc2e63e2e3",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "fc2e63e2e3f610aef89e7254e4149ba15784575f"
+  },
+  "_source": "https://github.com/xiongwilee/jquery.scrollFloat.js.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/xiongwilee/jquery.scrollFloat.js.git"
+}
